@@ -1,0 +1,6 @@
+#preview {
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* white-space: pre-wrap; /1* Preserve whitespace and newlines, wrap text *1/ */
+    word-wrap: break-word; /* Ensure long words break */
+}

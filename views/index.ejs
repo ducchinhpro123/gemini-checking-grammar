@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+    <h1>Hello world</h1>
+    <div style="display: flex; gap: 20px;">
+        <form id="form">
+            <textarea id="prompt" name="prompt"></textarea>
+            <button id="submit-btn" type="submit">Check grammar</button>
+        </form>
+
+        <div id="preview" style="border: 1px solid #ccc; padding: 10px;">
+            <% if (typeof(response) !== 'undefined') { %>
+                <%= response %>
+            <% } %>
+        </div>
+
+    </div>
+    <script src="/js/script.js"></script>
+    <!-- Markdown Parser (choose one) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- or -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js"></script> -->
+    <!-- HTML Sanitizer (Highly Recommended!) -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+</body>
+</html>
