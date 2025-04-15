@@ -27,20 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ prompt })
       });
 
-      // Parsing json
-
       const responseFromGemini = await response.json();
-      console.log(responseFromGemini.response);
+
       if (responseFromGemini) {
-        const rawHtml = marked.parse(responseFromGemini.response);
-        const safeHtml = DOMPurify.sanitize(rawHtml);
-        preview.innerHTML = safeHtml;
+        preview.innerHTML = responseFromGemini.response;
       } else {
         preview.innerHTML = 'No response from LLM';
       }
 
     } catch (e) {
-
+      preview.innerHTML = 'Something went wrong';
     } finally {
       submitBtn.disable = false;
       submitBtn.textContent = 'Check grammar';
